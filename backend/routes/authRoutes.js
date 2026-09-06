@@ -1,0 +1,15 @@
+const express = require('express')
+const router = express.Router()
+
+const {
+  register,
+  login,
+} = require('../controllers/authController')
+
+// REGISTER API
+router.post('/register', register)
+
+// LOGIN API
+router.post('/login', login)
+
+module.exports = router
