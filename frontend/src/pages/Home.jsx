@@ -93,7 +93,7 @@ const Home = () => {
               <div className="mt-9 flex flex-col gap-3 sm:flex-row">
                 <Link
                   to={user ? '/create-blog' : '/register'}
-                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-stone-900 px-6 py-3.5 font-semibold text-white transition hover:bg-stone-700"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-orange-700 px-6 py-3.5 font-semibold text-white transition hover:bg-orange-800"
                 >
                   <PenLine size={18} />
                   {user ? 'Write a Blog' : 'Start Writing'}

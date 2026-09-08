@@ -1,4 +1,3 @@
-
 import { Link } from 'react-router-dom'
 import { Calendar, Clock, User, ArrowRight } from 'lucide-react'
 
@@ -79,7 +78,7 @@ function BlogCard({ blog }: BlogCardProps) {
 
   return (
     <article className="group overflow-hidden rounded-2xl border border-stone-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl">
-      <div className="h-2 bg-orange-700" />
+      <div className="h-2 bg-orange-600" />
 
       <div className="p-6">
         <div className="flex items-center justify-between gap-3">
@@ -122,7 +121,7 @@ function BlogCard({ blog }: BlogCardProps) {
         {blogId ? (
           <Link
             to={`/blog/${blogId}`}
-            className="mt-6 flex items-center justify-between rounded-xl bg-stone-900 px-4 py-3 font-semibold text-white transition hover:bg-orange-700"
+            className="mt-6 flex items-center justify-between rounded-xl bg-orange-600 px-4 py-3 font-semibold text-white transition hover:bg-orange-700"
           >
             <span>Read Full Story</span>
 
@@ -135,7 +134,7 @@ function BlogCard({ blog }: BlogCardProps) {
           <button
             type="button"
             disabled
-            className="mt-6 flex w-full cursor-not-allowed items-center justify-between rounded-xl bg-stone-400 px-4 py-3 font-semibold text-white"
+            className="mt-6 flex w-full cursor-not-allowed items-center justify-between rounded-xl bg-stone-300 px-4 py-3 font-semibold text-stone-600"
           >
             <span>Read Full Story</span>
             <ArrowRight size={18} />
@@ -147,5 +146,4 @@ function BlogCard({ blog }: BlogCardProps) {
 }
 
 export default BlogCard
-
 

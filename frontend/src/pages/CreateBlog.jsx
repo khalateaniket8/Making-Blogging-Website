@@ -118,7 +118,7 @@ function CreateBlog() {
                 value={content}
                 onChange={(e) => setContent(e.target.value)}
                 placeholder="Start writing your story..."
-                className="w-full resize-none rounded-xl border border-stone-300 px-4 py-4 leading-7 outline-none focus:border-orange-600 focus:ring-4 focus:ring-orange-100"
+                className="w-full resize-none rounded-xl border border-stone-300 bg-white px-4 py-4 leading-7 outline-none placeholder:text-stone-400 focus:border-orange-600 focus:ring-4 focus:ring-orange-100"
               />
             </div>
 

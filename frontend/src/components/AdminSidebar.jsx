@@ -34,7 +34,10 @@ function AdminSidebar() {
   return (
     <aside className="w-full border-b border-stone-200 bg-white md:min-h-screen md:w-64 md:border-b-0 md:border-r">
       <div className="p-6">
-        <Link to="/admin" className="text-2xl font-bold">
+        <Link
+          to="/admin"
+          className="text-2xl font-bold text-stone-900"
+        >
           BlogSphere
         </Link>
 
@@ -53,8 +56,8 @@ function AdminSidebar() {
               to={item.path}
               className={`flex min-w-max items-center gap-3 rounded-md px-4 py-3 text-sm transition ${
                 active
-                  ? 'bg-stone-900 text-white'
-                  : 'text-stone-600 hover:bg-stone-100'
+                  ? 'bg-stone-200 text-stone-900 font-semibold'
+                  : 'text-stone-600 hover:bg-stone-100 hover:text-stone-900'
               }`}
             >
               {item.icon}

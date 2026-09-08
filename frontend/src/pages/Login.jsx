@@ -1,4 +1,3 @@
-
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import {
@@ -219,7 +218,7 @@ function Login() {
               <button
                 type="submit"
                 disabled={loading}
-                className="flex w-full items-center justify-center gap-2 rounded-xl bg-stone-900 py-3.5 font-semibold text-white shadow-lg transition hover:bg-orange-700 disabled:cursor-not-allowed disabled:opacity-60"
+                className="flex w-full items-center justify-center gap-2 rounded-xl bg-orange-700 py-3.5 font-semibold text-white shadow-lg transition hover:bg-orange-800 disabled:cursor-not-allowed disabled:opacity-60"
               >
                 <LogIn size={19} />
 

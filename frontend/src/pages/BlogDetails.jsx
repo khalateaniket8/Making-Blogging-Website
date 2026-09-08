@@ -158,14 +158,14 @@ function BlogDetails() {
             <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:justify-center">
               <button
                 onClick={() => navigate('/dashboard')}
-                className="rounded-xl bg-stone-900 px-5 py-3 font-semibold text-white"
+                className="rounded-xl bg-orange-600 px-5 py-3 font-semibold text-white transition hover:bg-orange-700"
               >
                 Go to Dashboard
               </button>
 
               <button
                 onClick={fetchBlog}
-                className="rounded-xl border border-stone-300 px-5 py-3 font-semibold text-stone-700"
+                className="rounded-xl border border-stone-300 px-5 py-3 font-semibold text-stone-700 transition hover:bg-stone-100"
               >
                 Try Again
               </button>
@@ -180,7 +180,6 @@ function BlogDetails() {
 
   return (
     <>
-      {/* Reading Progress */}
       <ReadingProgress />
 
       <Navbar />
@@ -200,15 +199,19 @@ function BlogDetails() {
           {/* Blog Header */}
           <article className="mt-8 overflow-hidden rounded-3xl border border-stone-200 bg-white shadow-sm">
 
-            <div className="bg-stone-900 p-7 sm:p-10">
+            {/* Changed black background to orange */}
+            <div className="bg-orange-600 p-7 sm:p-10">
+
               <div className="flex flex-wrap items-center justify-between gap-4">
-                <span className="inline-flex items-center gap-2 rounded-full bg-orange-600 px-4 py-2 text-sm font-bold text-white">
+
+                <span className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-bold text-orange-700">
                   <BookOpen size={16} />
                   BLOG STORY
                 </span>
 
                 {isOwner() && (
                   <div className="flex gap-3">
+
                     <button
                       onClick={() => navigate(`/edit-blog/${blog._id}`)}
                       className="inline-flex items-center gap-2 rounded-xl bg-white px-4 py-2.5 font-semibold text-stone-900 transition hover:bg-stone-100"
@@ -226,6 +229,7 @@ function BlogDetails() {
 
                       {deleting ? 'Deleting...' : 'Delete'}
                     </button>
+
                   </div>
                 )}
               </div>
@@ -234,9 +238,11 @@ function BlogDetails() {
                 {blog.title}
               </h1>
 
-              <div className="mt-8 flex flex-col gap-4 border-t border-white/10 pt-6 sm:flex-row sm:items-center sm:justify-between">
+              <div className="mt-8 flex flex-col gap-4 border-t border-white/30 pt-6 sm:flex-row sm:items-center sm:justify-between">
+
                 <div className="flex items-center gap-3">
-                  <div className="flex h-11 w-11 items-center justify-center rounded-full bg-orange-600 font-bold text-white">
+
+                  <div className="flex h-11 w-11 items-center justify-center rounded-full bg-white font-bold text-orange-700">
                     {blog.author?.name
                       ? blog.author.name.charAt(0).toUpperCase()
                       : 'U'}
@@ -247,13 +253,15 @@ function BlogDetails() {
                       {blog.author?.name || 'Unknown Author'}
                     </p>
 
-                    <p className="text-sm text-stone-400">
+                    <p className="text-sm text-orange-100">
                       Author
                     </p>
                   </div>
+
                 </div>
 
-                <div className="flex flex-wrap items-center gap-4 text-sm text-stone-300">
+                <div className="flex flex-wrap items-center gap-4 text-sm text-orange-100">
+
                   <span className="flex items-center gap-2">
                     <Calendar size={16} />
                     {formatDate(blog.createdAt)}
@@ -263,20 +271,26 @@ function BlogDetails() {
                     <Clock size={16} />
                     {calculateReadingTime(blog.content)} min read
                   </span>
+
                 </div>
+
               </div>
             </div>
 
             {/* Blog Content */}
             <div className="p-7 sm:p-10">
+
               <div className="prose prose-stone max-w-none">
+
                 <p className="whitespace-pre-line text-lg leading-8 text-stone-700">
                   {blog.content}
                 </p>
+
               </div>
 
-              {/* New Blog Actions */}
+              {/* Blog Actions */}
               <div className="mt-10 flex flex-wrap gap-3 border-t border-stone-200 pt-6">
+
                 <LikeButton />
 
                 <BookmarkButton />
@@ -284,21 +298,26 @@ function BlogDetails() {
                 <ShareButton title={blog.title} />
 
                 <CopyLinkButton />
+
               </div>
 
               {/* Comments */}
               <CommentSection />
+
             </div>
           </article>
 
           {/* Bottom Actions */}
           <section className="mt-8 flex flex-col gap-4 rounded-2xl border border-stone-200 bg-white p-5 sm:flex-row sm:items-center sm:justify-between">
+
             <div className="flex items-center gap-3">
+
               <div className="rounded-xl bg-orange-100 p-3 text-orange-700">
                 <User size={20} />
               </div>
 
               <div>
+
                 <p className="font-semibold text-stone-900">
                   Enjoyed this story?
                 </p>
@@ -306,28 +325,36 @@ function BlogDetails() {
                 <p className="text-sm text-stone-500">
                   Explore more stories on BlogSphere.
                 </p>
+
               </div>
+
             </div>
 
+            {/* Changed black button to orange */}
             <button
               onClick={() => navigate('/dashboard')}
-              className="inline-flex items-center justify-center gap-2 rounded-xl bg-stone-900 px-5 py-3 font-semibold text-white transition hover:bg-stone-700"
+              className="inline-flex items-center justify-center gap-2 rounded-xl bg-orange-600 px-5 py-3 font-semibold text-white transition hover:bg-orange-700"
             >
               Explore Blogs
-              <ArrowLeft size={18} className="rotate-180" />
+
+              <ArrowLeft
+                size={18}
+                className="rotate-180"
+              />
             </button>
+
           </section>
         </div>
       </main>
 
       <Footer />
 
-      {/* Back To Top */}
       <BackToTop />
     </>
   )
 }
 
 export default BlogDetails
+
 
 

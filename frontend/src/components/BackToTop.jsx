@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from 'react'
 import { ArrowUp } from 'lucide-react'
 
@@ -30,7 +29,7 @@ function BackToTop() {
     <button
       type="button"
       onClick={scrollToTop}
-      className="fixed bottom-6 right-6 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-stone-900 text-white shadow-lg transition hover:-translate-y-1 hover:bg-orange-700"
+      className="fixed bottom-6 right-6 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-orange-600 text-white shadow-lg transition hover:-translate-y-1 hover:bg-orange-700"
       aria-label="Back to top"
     >
       <ArrowUp size={20} />
