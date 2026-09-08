@@ -1,13 +1,12 @@
 import axios from 'axios'
 
 const api = axios.create({
-  baseURL: 'https://making-blogging-website-qgs4.vercel.app/api',
+  baseURL: import.meta.env.VITE_API_BASE_URL,
   headers: {
     'Content-Type': 'application/json',
   },
 })
 
-// प्रत्येक request सोबत token पाठवण्यासाठी
 api.interceptors.request.use(
   (config) => {
     const token = localStorage.getItem('token')
