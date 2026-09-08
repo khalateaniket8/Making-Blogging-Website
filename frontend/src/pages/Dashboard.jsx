@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { PenLine, LogOut, LayoutDashboard } from 'lucide-react'
@@ -33,7 +32,7 @@ function Dashboard() {
         setError('')
 
         const response = await fetch(
-          'http://localhost:5000/api/blogs',
+          `${import.meta.env.VITE_API_BASE_URL}/blogs`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -121,6 +120,7 @@ function Dashboard() {
             </div>
 
             <div className="flex flex-wrap gap-3">
+
               <Link
                 to="/create-blog"
                 className="inline-flex items-center gap-2 rounded-xl bg-orange-700 px-5 py-3 font-semibold text-white shadow-lg transition hover:bg-orange-600"
@@ -136,11 +136,13 @@ function Dashboard() {
                 <LogOut size={18} />
                 Logout
               </button>
+
             </div>
           </div>
 
           {/* All Blogs */}
           <section className="py-10">
+
             <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
 
               <div>
@@ -161,6 +163,7 @@ function Dashboard() {
                 {filteredBlogs.length} Blog
                 {filteredBlogs.length !== 1 ? 's' : ''}
               </p>
+
             </div>
 
             {/* Search */}
@@ -180,21 +183,28 @@ function Dashboard() {
 
             {/* Blog Cards */}
             <div className="mt-8">
+
               {loading ? (
                 <LoadingSpinner text="Loading blogs..." />
-              ) : error ? null : filteredBlogs.length === 0 ? (
+              ) : error ? (
+                null
+              ) : filteredBlogs.length === 0 ? (
                 <EmptyState searchTerm={searchTerm} />
               ) : (
                 <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+
                   {filteredBlogs.map((blog) => (
                     <BlogCard
                       key={blog._id || blog.id}
                       blog={blog}
                     />
                   ))}
+
                 </div>
               )}
+
             </div>
+
           </section>
         </div>
       </main>
